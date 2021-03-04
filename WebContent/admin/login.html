@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<style type="text/css">
+body{background:#b7daee; text-align: center;}
+.panel-tool{display:none;}
+</style>
+<body>
+    <div class="easyui-dialog" title="登录" data-options="iconCls:'icon-tip'" style="background:linear-gradient(to bottom, #EFF5FF 0px, #E0ECFF 20%);width:250px;height:170px;padding:10px">
+		<form id="adminLoginForm" method="post" >
+				<table cellpadding="5">
+					<tr>
+						<td>账号:</td>
+						<td><input id="name" class="easyui-validatebox" type="text" name="name"></input></td>
+					</tr>
+					<tr>
+						<td>密码:</td>
+						<td><input id="password" class="easyui-validatebox" type="password" name="password"></input></td>
+					</tr>
+				</table>
+			</form>
+			<div style="padding: 5px">
+				<a href="javascript:void(0)" style="margin-left:70px;" class="easyui-linkbutton"
+					onclick="submitForm()">登录</a><a style="margin-left:20px;" href="javascript:void(0)"
+					class="easyui-linkbutton" onclick="clearForm()">重置</a>
+			</div>
+	</div>
+	<script>
+		function submitForm() {
+			//$('#adminLoginForm').form('submit');
+			$.ajax({
+			        type:"post",
+			        cache:false,
+			        url:"adminAction!login",
+			        data:{"admin.name":$("#name").val(),"admin.password":$("#password").val()},
+			        dataType:"json",
+			        success:function(result){
+						if(result.state=="failure"){
+							$.messager.alert("错误",result.msg,"error");
+						}else{
+							location.href=result.msg;
+						}       	
+			        }
+			});
+			        
+		}
+		function clearForm() {
+			$('#adminLoginForm').form('clear');
+		}
+	</script>
+</body>
+</html>

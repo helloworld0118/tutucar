@@ -1,0 +1,130 @@
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		/*
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; */
+		}
+	.reveal-p{text-align:center;border-bottom:1px solid #c0bfbf;font-size:12px;padding-bottom:10px;}
+	.reveal-pb{text-align:center;font-size:12px;padding-bottom:10px; }
+	.reveal-error a{ text-decoration:none;color:#000}
+	.reveal-modal a{ text-decoration:none;color:#000}
+	.reveal-record a{ text-decoration:none;color:#000}
+	.reveal-modal {
+		visibility: hidden;
+		margin-left: -300px;
+		width: 120px;
+		height:145px;
+		overflow:hidden;
+		border:1px solid #b3b4b7;
+		background: #FFF url(modal-gloss.png) no-repeat -200px -80px;
+		position: absolute;
+		right:20px;
+		top:15px;
+		z-index: 101;
+		padding: 1px 2px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		}
+		
+	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+	.reveal-record .close-reveal-record {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		position:absolute;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+	.reveal-error .close-reveal-error {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		position:absolute;
+		color: red;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+	.reveal-record {
+		visibility: hidden;
+		/*margin-left: -120px;*/
+		width: 240px;
+		height:140px;
+		overflow:hidden;
+		/*line-height:140px;*/
+		text-align:center;
+		border:1px solid #b3b4b7;
+		background: #FFF url(modal-gloss.png) no-repeat -200px -80px;
+		position: absolute;
+		right:10%;
+		top:120px;
+		z-index: 101;
+		padding: 1px 2px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		}
+	.reveal-error {
+		visibility: hidden;
+		margin-left: -70px;
+		width: 140px;
+		height:50px;
+		overflow:hidden;
+		/*line-height:140px;*/
+		text-align:center;
+		border:1px solid #b3b4b7;
+		background: #FFF url(modal-gloss.png) no-repeat -200px -80px;
+		position: absolute;
+		left:50%;
+		top:20%;
+		z-index: 101;
+		padding: 1px 2px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		}
+	.reveal-record.small 		{ width: 200px; margin-left: -140px;}
+	.reveal-record.medium 		{ width: 400px; margin-left: -240px;}
+	.reveal-record.large 		{ width: 600px; margin-left: -340px;}
+	.reveal-record.xlarge 		{ width: 800px; margin-left: -440px;}

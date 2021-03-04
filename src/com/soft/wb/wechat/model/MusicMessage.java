@@ -1,0 +1,19 @@
+package com.soft.wb.wechat.model;
+/** 
+ * “Ù¿÷œ˚œ¢ 
+ *  
+ * @author liufeng 
+ * @date 2013-05-19 
+ */  
+public class MusicMessage extends BaseMessage {  
+    // “Ù¿÷  
+    private Music Music;  
+  
+    public Music getMusic() {  
+        return Music;  
+    }  
+  
+    public void setMusic(Music music) {  
+        Music = music;  
+    }  
+}  

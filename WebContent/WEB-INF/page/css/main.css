@@ -1,0 +1,59 @@
+/*
+ * @freebie: three-clean-buttons
+ * @author: Francisco Neves
+ */
+
+* { outline: none !important; }
+a, a:visited, a:hover, a:active { text-decoration: none; color: inherit; }
+
+
+div.clean-button
+{
+	padding: 0px;
+	height:10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#cbcbcb', GradientType=0 );
+	cursor: pointer;
+}
+
+div.clean-button > span.text
+{
+	padding: 5px 10px;
+	background-color: #287eff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.7);
+	-moz-box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.7);
+	box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.7);
+	text-transform: uppercase;
+	color: white;
+	font-size: 12px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+	border: 1px solid #51abc5;
+}
+
+div.clean-button:hover > span.text
+{
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47cced', endColorstr='#69d5f1', GradientType=0 );
+}
+
+div.clean-button:active
+{
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcbcb', endColorstr='#f1f1f1', GradientType=0 );
+}
+
+div.clean-button:active > span.text
+{
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#056aad', endColorstr='#055183', GradientType=0 );
+	-webkit-box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.1);
+	-moz-box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.1);
+	box-shadow: inset 0px 2px 0px 0px rgba(71,233,254,0.1);
+	border: 1px solid #03507e;
+}
+

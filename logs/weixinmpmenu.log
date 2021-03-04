@@ -1,0 +1,5 @@
+[ERROR] 2014-07-20 13:05:39,664 org.apache.commons.httpclient.util.EncodingUtil     - Encoding not supported: UTF08
+  [ERROR] 2014-07-20 13:06:12,715 org.apache.commons.httpclient.util.EncodingUtil     - Encoding not supported: UTF08
+  [ERROR] 2014-07-20 13:06:45,376 org.apache.commons.httpclient.util.EncodingUtil     - Encoding not supported: UTF08
+  [ERROR] 2014-07-20 13:07:51,971 org.apache.commons.httpclient.util.EncodingUtil     - Encoding not supported: UTF08
+  

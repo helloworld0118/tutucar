@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.2.min.js"></script>
+<title>半日/全日租</title> 
+<style>
+body,p{margin:0px;padding:0px; font-family:"微软雅黑"; font-size:16px;text-shadow:none}
+img{border:none;}
+#title{ text-shadow:none;background:#304d85; width:100%;height:40px;padding:3px; text-align:center; line-height:40px; font-size:18px; color:#FFF}
+#telImg{float:right;margin-right:15px;}
+#homeImg{float:right;margin-top:5px;margin-right:15px;}
+#backImg{margin-left:10px;float:left;}
+#serviceTitle{ font-weight:bolder;margin-top:15px;}
+#serviceContent{width:90%;margin:0 auto;}
+ul,li{margin:0px;padding:0px;list-style:none;}
+li{width:50%;float:left;margin-top:5px;color:#292929;font-size:14px;}
+#servicePrice{color:#304d85;font-size:16px;}
+.service{ background:#e5e5e5; border:1px solid #d9d9d9; color:#000; text-decoration:none; height:35px; line-height:35px; display:block;width:49%;float:left; text-align:center}
+.serviceSelect{ background:#234074;border:1px solid #000;color:#FFF;text-decoration:none;height:35px;line-height:35px; display:block;width:49%;float:left; text-align:center}
+#next_a{background:url(images/cannelbtn.png); background-repeat:no-repeat; background-size:100% 100%;padding:10px;font-size:18px;color:#FFF;width:70%;margin:0 auto;display:block; text-align:center;margin-top:20px;}
+a{ text-shadow:none;}
+</style>
+</head>
+
+<body>
+ <header id="title">
+   	半日/全日租
+    <a href="javascript:history.back()"><img src="images/back.png" id="backImg"/></a>
+    <a href="#"><img src="images/home.png" id="homeImg"/></a>
+    <a href="tel:86-10-6538 0036"><img src="images/tel.png" id="telImg"/></a>
+ </header>
+ <section id="serviceContent">
+     <section style="height:80px;">
+        <p id="serviceTitle">北京-海淀区-半日/全日租</p>
+        <ul>
+           <li>车型： 奔驰S350 </li>
+           <li>价　格：<span id="servicePrice">900元起</span></li>
+           <li>超时：200元/小时</li>
+           <li>超公里：20元/公里</li>
+        </ul>
+     </section>
+     <section style="height:35px; margin-top:10px;">
+        <p><a href="#" id="aircome" class="service">全日租</a><a href="#" class="serviceSelect" id="airsend">半日租</a></p>
+     </section>
+     <section style="clear:both;height:auto;margin-top:15px;">
+       <form style="background:#f0f0f2;border:1px solid #b5b6b8; border-radius:10px;height:auto;padding:0 10px;">
+     	 <div class="ui-field-contain"> <label>用车时间</label>
+         <input type="text" placeholder="请选择上车时间" /></div>
+         <div class="ui-field-contain"> <label>上车地点</label>
+         <input type="text" placeholder="请选择上车地点（默认选择的区县）" /></div>
+         <div class="ui-field-contain"> <label>地点补充</label>
+         <input type="text" placeholder="补充详细地址，司机更容易接到您"/></div>
+         <div class="ui-field-contain"> <label>下车地点</label>
+         <input type="text" placeholder="请输入目的地" /></div>
+         <div class="ui-field-contain"><label>预估时间</label>
+         <input type="text" placeholder="输入大概行程时间" /></div>
+       </form>
+     </section>
+     <div style="clear:both;">
+ 	  <a id="next_a">下一步</a>
+  	 </div>
+ </section>
+ </body>
+</html>

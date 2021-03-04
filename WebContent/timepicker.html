@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>时间选择</title> 
+<style>
+body,p{margin:0px;padding:0px; font-family:"微软雅黑"; font-size:16px;text-shadow:none}
+img{border:none;}
+#title{ text-shadow:none;background:#304d85; width:100%;height:40px;padding:3px 0px; text-align:center; line-height:40px; font-size:18px; color:#FFF}
+#telImg{float:right;margin-right:15px;}
+#homeImg{float:right;margin-top:5px;margin-right:15px;}
+#backImg{margin-left:10px;float:left;}
+ul,li{padding:0px;margin:0px;list-style:none;}
+li{float:left;text-align:center;padding:5px 0px;}
+.td1{width:19%;}
+.td2{width:20%; border-left:2px solid #bebebe;}
+.td3{width:19%; border-left:2px solid #bebebe;}
+.td4{width:20%; border-left:2px solid #bebebe;}
+.td5{width:19%; border-left:2px solid #bebebe;}
+.cols5{width:100%; border-bottom:2px solid #bebebe;font-size:14px;}
+.notwork{ background: green;}
+</style>
+</head>
+
+<body style=" background:#d9d9d9">
+	<header id="title">
+   	 时间选择
+    <a href="javascript:history.back()"><img src="images/back.png" id="backImg"/></a>
+    <a href="#"><img src="images/home.png" id="homeImg"/></a>
+    <a href="tel:86-10-6538 0036"><img src="images/tel.png" id="telImg"/></a>
+ </header>
+ <section style="width:90%;margin:10px auto;padding:5px;background:#FFF;height:1000px; border:2px solid #bebebe; border-radius:5px;">
+    <section style="border:2px solid #bebebe;height:1000px;border-radius:3px;">
+       <p style="background:#bebebe;padding:10px; text-align:center;" id="timepicterTitle"></p>
+       <section>
+         <ul id="timecontent">
+           
+ 		 </ul>
+       </section>
+    </section>
+ </section>
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+  var hh='';
+  var times1=[];
+  var index=0;
+  for(var i=0;i<5;i++){
+	   hh= "0"+i;
+	   for(var j=0;j<=45;j+=15){
+		  if(j==0){
+		      times1[index]=hh+":0"+j;
+		  }else{
+		      times1[index]=hh+":"+j;
+		  }
+		  index++;		 
+  	   }
+  }
+
+  var times2=[];
+  index=0;
+  for(var i=5;i<10;i++){
+	   hh= "0"+i;
+	   for(var j=0;j<=45;j+=15){
+		  if(j==0){
+		      times2[index]=hh+":0"+j;
+		  }else{
+		      times2[index]=hh+":"+j;
+		  }
+		  index++;		 
+  	   }
+
+  }
+  var times3=[];
+  index=0;
+  for(var i=10;i<15;i++){
+	  for(var j=0;j<=45;j+=15){
+		  if(j==0){
+		      times3[index]=i+":0"+j;
+		  }else{
+		      times3[index]=i+":"+j;
+		  }
+		  index++;		 
+  	   }
+  }
+  var times4=[];
+  index=0;
+  for(var i=15;i<20;i++){
+	  for(var j=0;j<=45;j+=15){
+		  if(j==0){
+		      times4[index]=i+":0"+j;
+		  }else{
+		      times4[index]=i+":"+j;
+		  }
+		  index++;		 
+  	   }
+  }
+  var times5=[];
+  index=0;
+  for(var i=20;i<25;i++){
+	   for(var j=0;j<=45;j+=15){
+		  if(j==0){
+		      times5[index]=i+":0"+j;
+		  }else{
+		      times5[index]=i+":"+j;
+		  }
+		  index++;		 
+  	   }
+  }
+  var time=[];
+  index=0;
+  for(var i=0;i<20;i++){
+	 time[index]=times1[i];
+	 index++;
+	 time[index]=times2[i];
+	 index++;
+	 time[index]=times3[i];
+	 index++;
+	 time[index]=times4[i];
+	 index++;
+	 time[index]=times5[i];
+	 index++;
+  }
+  //console.info(time.length);
+  for(var i=0;i<time.length;i+=5){
+      if(time[i+4].indexOf('24')>=0){
+	  		time[i+4]="&nbsp;"
+	  }
+	  content=" <li class='td1'>"+time[i]+"</li>"+
+            "<li class='td2'>"+time[i+1]+"</li>"+
+            "<li class='td3'>"+time[i+2]+"</li>"+
+            "<li class='td4'>"+time[i+3]+"</li>"+
+            "<li class='td5'>"+time[i+4]+"</li>"+
+            "<hr style='clear:both;border-top:1px solid #bebebe;width:100%;padding:0px;margin:0px;'>";
+	  $("#timecontent").append(content);
+			
+  }
+  $("#timecontent").append('<li class="cols5">*夜间服务(从21:00至08:00|收费50元/次)</li>');
+</script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#timepicterTitle").html($.cookie("date")+" 几点用车");
+	$.each($("li"), function(i,val){ 
+		var times=$(val).html().split(":")
+		if(times.length==2){
+			if(times[0]<=7){
+				$(val).attr("class",$(val).attr("class")+"  notwork")
+			}else if(times[0]>=21){
+				$(val).attr("class",$(val).attr("class")+"  notwork")
+			}
+		}
+	});
+	$("li").click(function(){
+		$.cookie("time",$(this).html());
+		if($(this).attr("class").indexOf("notwork")>=0){
+			$.cookie("extraPrice",50);
+		}
+		location.href= $.cookie("url");
+	});
+});
+</script>
+</html>

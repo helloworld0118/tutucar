@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>选择车型</title> 
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/reveal.css">	
+<style>
+body,p{margin:0px;padding:0px; font-family:"微软雅黑"; font-size:16px;}
+img{border:none;}
+#title{ background:#304d85; width:100%;height:40px;padding:3px; text-align:center; line-height:40px; font-size:18px; color:#FFF}
+#telImg{float:right;margin-right:15px;}
+#homeImg{float:right;margin-top:5px;margin-right:15px;}
+#backImg{margin-left:10px;float:left;}
+input{
+       border-radius:5px;
+	   height:25px;
+	   width:40%;
+	   margin-left:auto;
+	   margin-right:auto;
+	   display:block;
+	   padding-left:5px;
+       border:1px solid #b5b5b5;
+       -webkit-transition: box-shadow 0.30s ease-in-out;   
+       -moz-transition:  box-shadow 0.30s ease-in-out;     
+	   color:#bcb8b6;
+	   font-size:14px;
+	   float:left;
+ }
+input:focus{
+ border:#87C6F9 1px solid;
+ box-shadow: 0 0 8px rgba(103, 166, 217, 1);
+ color:#000;
+}
+label{float:left;margin-top:19px;width:50%;font-size:14px;color:#303537; text-align:center;padding-left:8px;color:#FFF;}
+#choicecarContent{ width:90%;margin:0 auto;padding:5px;height:auto;border-radius:7px;background:#ebeae8; border:1px solid #97a6c2; margin-top:20px;}
+#choicetip{color:#303537;font-size:14px;margin-top:20px;padding-left:5px;}
+#choiceDeail{ border:1px solid #304d85;height:300px;border-radius:5px;margin-top:5px;background:#FFF;}
+.carname{color:#475e8f;font-size:14px;padding-left:10px;padding-top:5px;}
+.cardes1{color:#bab7b2;font-size:12px;padding-left:10px;margin-top:5px;}
+.cardes2{color:#bab7b2;font-size:12px;padding-left:10px;margin-top:2px;}
+.carPrice{color:#304d85; font-weight:bolder;font-size:20px;}
+  ul,li{margin:0px;padding:0px;list-style:none;width:100%;}
+  li{float:left; width:25px;width:25%;height:25px; font-size:14px;}
+</style>
+</head>
+<body>
+ <header id="title">
+   	选择车型
+    <a href="javascript:history.back()"><img src="images/back.png" id="backImg"/></a>
+    <a href="#"><img src="images/home.png" id="homeImg"/></a>
+    <a href="tel:86-10-6538 0036"><img src="images/tel.png" id="telImg"/></a>
+ </header>
+ <section id="choicecarContent">
+   <section style="height:60px;background:#304d85;border-radius:6px;">
+     <label>选择您要用车的地区：</label>
+     <input show_id="showRecord" id="areaipnut" readonly type="text" value="东城区" style="margin-top:15px;"/>
+   </section>
+    <p id="choicetip">选择您要使用的车型：</p>
+    <section id="choiceDeail">
+        <article style="padding-top:10px;">
+            <header style="height:30px;background:#304d85;color:#FFF;width:70%;padding-left:10px;line-height:30px;">
+               S类车型-五座商务车型　　　
+            </header>
+            <section style="height:60px;">
+              <div style="width:40%;float:left;">
+                 <p class="carname"><a href="cardetail.html">帕萨特</a></p>
+                 <p class="cardes1">超公里： 4元/公里 </p>
+                 <p class="cardes2">超小时：50元/小时</p>
+              </div>
+              <div style="width:30%;float:left;color:#55595b; text-align:right;margin-top:30px;">
+                <p class=""><span class="carPrice">260</span>元起</p>
+              </div>
+              <div style="width:30%;float:left;text-align:center;margin-top:30px;">
+               	<div class="clean-button">
+					<span class="text"><a href="#">租车</a></span>
+				</div>
+              </div>
+            </section>
+            <hr style="border:.1px dotted;width:98%;padding:0px;margin:0px;clear:both;margin-top:10px;" color="#304d85">
+             <section style="height:60px;">
+              <div style="width:40%;float:left;">
+                 <p class="carname"><a href="cardetail.html">帕萨特</a></p>
+                 <p class="cardes1">超公里： 4元/公里 </p>
+                 <p class="cardes2">超小时：50元/小时</p>
+              </div>
+              <div style="width:30%;float:left;color:#55595b; text-align:right;margin-top:30px;">
+                <p class=""><span class="carPrice">260</span>元起</p>
+              </div>
+              <div style="width:30%;float:left;text-align:center;margin-top:30px;">
+               	<div class="clean-button">
+					<span class="text"><a href="#">租车</a></span>
+				</div>
+              </div>
+            </section>
+        </article>
+          <article style="padding-top:10px;">
+            <header style="height:30px;background:#304d85;color:#FFF;width:70%;padding-left:10px;line-height:30px;">
+               S类车型-五座商务车型　　　
+            </header>
+            <section style="height:60px;">
+              <div style="width:40%;float:left;">
+                 <p class="carname"><a href="cardetail.html">帕萨特</a></p>
+                 <p class="cardes1">超公里： 4元/公里 </p>
+                 <p class="cardes2">超小时：50元/小时</p>
+              </div>
+              <div style="width:30%;float:left;color:#55595b; text-align:right;margin-top:30px;">
+                <p class=""><span class="carPrice">260</span>元起</p>
+              </div>
+              <div style="width:30%;float:left;text-align:center;margin-top:30px;">
+               	<div class="clean-button">
+					<span class="text"><a href="#">租车</a></span>
+				</div>
+              </div>
+            </section>
+        </article>
+    </section>
+  </section>
+  <div id="showRecord" class="reveal-record">
+		
+        <div style="width:100%;height:100%;padding-top:20px;">
+         <ul>
+           <li class="close-reveal-record-li">东城区</li>
+           <li class="close-reveal-record-li">西城区</li>
+           <li class="close-reveal-record-li">朝阳区</li>
+           <li class="close-reveal-record-li">海淀区</li>
+           <li class="close-reveal-record-li">丰台区</li>
+           <li class="close-reveal-record-li">石景山</li>
+           <li class="close-reveal-record-li">昌平区</li>
+           <li class="close-reveal-record-li">顺义区</li>
+           <li class="close-reveal-record-li">通州区</li>
+           <li class="close-reveal-record-li">房山区</li>
+           <li class="close-reveal-record-li">大兴区</li>
+           <li class="close-reveal-record-li">门头沟</li>
+           <li class="close-reveal-record-li">延庆县</li>
+           <li class="close-reveal-record-li">怀柔区</li>
+           <li class="close-reveal-record-li">密云县</li>
+           <li class="close-reveal-record-li">平谷区</li>
+         </ul>
+        </div> 　　　　　
+		<!--<a class="close-reveal-record">&#215;</a>-->
+   </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+</html>

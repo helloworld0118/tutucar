@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>订单管理</title>
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+	<table id="userGroupdg" class="easyui-datagrid"
+		data-options="rownumbers:true,singleSelect:true,url:'userGroupAction!getUserGroups',method:'get',toolbar:userGrouptoolbar,fitColumns:true,pagination:true,fit:true,pageList:[20,40] ">
+		<thead>
+			<tr>
+				<th field="id" width="50">编号</th>
+				<th field="groupName" width="50">名称</th>
+				<th field="pricegroup" formatter="priceFormatter" width="50">车价组</th>
+				<th field="description" width="50">描述</th>
+				<th field="remark" width="50">备注</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="userGrouptoolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-add" plain="true" onclick="newUserGroup()">新增</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-edit" plain="true" onclick="editUserGroup()">修改</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-remove" plain="true" onclick="deleteUserGroup()">删除</a>
+	</div>
+	<div id="userGroupdlg" class="easyui-dialog"
+		style="width: 330px; height: 200px;"padding: 10px 20px" closed="true"
+		buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<input name="id" type="hidden"/>
+			<div class="fitem">
+				<label>名称:</label> <input  name="groupName"
+					class="easyui-validatebox" required="true" />
+			</div>
+			<div class="fitem">
+				<label>描述:</label> <input name="description" />
+			</div>
+			<div class="fitem">
+				<label>价格组:</label>
+				<select id="price_groupselect" name="pricegroup.id">
+				</select>
+			</div>
+			<div class="fitem">
+				<label>备注:</label> <input name="remark" />
+			</div>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-ok" onclick="saveUserGroup()">Save</a> <a
+			href="javascript:void(0)" class="easyui-linkbutton"
+			iconCls="icon-cancel" onclick="javascript:$('#userGroupdlg').dialog('close')">Cancel</a>
+	</div>
+	<script type="text/javascript">
+		var url;
+		$.ajax({
+	        type:"get",
+	        cache:false,
+	        url:"priceGroupAction!getPriceGroups",
+	        dataType:"json",
+	        success:function(result){
+	        	$.each(result.rows, function(i,val){     
+					$("#price_groupselect").append('<option value="'+val.id+'">'+val.groupName+'</option>');
+				});
+	        }
+	     });
+		function priceFormatter(value,row,index){
+		  return value.groupName;
+		}
+		function newUserGroup() {
+			$('#userGroupdlg').dialog('open').dialog('setTitle', '新增');
+			$('#fm').form('clear');
+			url = 'userGroupAction!save';
+		}
+		function editUserGroup() {
+			var row = $('#userGroupdg').datagrid('getSelected');
+			if (row) {
+				$('#userGroupdlg').dialog('open').dialog('setTitle', '编辑');
+				$('#fm').form('load', row);
+				url = 'userGroupAction!save';
+			}else{
+				$.messager.alert("错误","请选择一行数据进行修改","info");
+			}
+		}
+		function saveUserGroup() {
+			$('#fm').form('submit', {
+				url :url,
+				onSubmit : function() {
+					return $(this).form('validate');
+				},
+				success : function(result) {
+					result=jQuery.parseJSON(result); 
+					if(!result.success){
+						$.messager.alert("错误",result.msg,"error");
+					}else{
+						$.messager.alert("提示",result.msg,"info");
+						$('#userGroupdg').datagrid('reload'); 
+						$('#userGroupdlg').dialog('close');
+					}       	
+				}
+			});
+		}
+		function deleteUserGroup() {
+			var row = $('#userGroupdg').datagrid('getSelected');
+			if (row) {
+				$.messager.confirm('提示',
+						'你确定删除这个条数据?',
+						function(r) {
+							if (r) {
+								$.post('userGroupAction!delete', {
+									id : row.id
+								}, function(result) {
+									if (result.success) {
+										$('#userGroupdg').datagrid('reload'); // reload the user data
+									} else {
+										$.messager.alert("错误",result.msg,"error");
+									}
+								}, 'json');
+							}
+						});
+			}else{
+				$.messager.alert("错误","请选择一行数据进行删除","info");
+			}
+		}
+	</script>
+	<style type="text/css">
+#fm {
+	margin: 0;
+	padding: 10px 30px;
+}
+
+.ftitle {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 0;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.fitem {
+	margin-bottom: 5px;
+}
+
+.fitem label {
+	display: inline-block;
+	width: 80px;
+}
+</style>
+</body>
+</html>

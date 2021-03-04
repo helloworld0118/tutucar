@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>后台管理</title>
+<link rel="stylesheet" type="text/css" href="../css/default.css">
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+<style>
+body {
+	font-family: "微软雅黑";
+}
+</style>
+<script type="text/javascript">
+var _menus = {"menus":[
+						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
+							"menus":[{"menuname":"订单管理","icon":"icon-nav","url":"orderForm.html"},
+									{"menuname":"会员管理","icon":"icon-add","url":"user.html"},
+									{"menuname":"会员级别","icon":"icon-users","url":"usergroup.html"},
+									{"menuname":"管理员管理","icon":"icon-users","url":"admin.html"}
+								]
+						},{"menuid":"2","icon":"icon-sys","menuname":"服务管理",
+							"menus":[{"menuname":"车辆管理","icon":"icon-car","url":"carmanager.html"},
+							         {"menuname":"车价分组","icon":"icon-car","url":"pricegroup.html"},
+									{"menuname":"车价管理","icon":"icon-car","url":"price.html"},
+									{"menuname":"服务管理","icon":"icon-car","url":"service.html"}
+								]
+						}
+				]};
+</script>
+</head>
+
+<body>
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'north'"
+			style="overflow: hidden; height: 30px; background: url(../images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;">
+		  <img alt="通途租车" src="../images/logo.png" style="float:left;margin-left: 10px;margin-top: 3px;">
+		  <a style="float:right;margin-right:20px;color:#FFF;text-decoration: none;line-height: 25px;" href="adminAction!logout">注销登录</a>	
+		</div>
+		 <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
+          <div class="footer">By WangBing</div>
+         </div>
+		 <div region="west" split="true" title="导航菜单" style="width:180px;" id="west">
+			<div class="easyui-accordion" fit="true" border="false">
+			</div>
+	    </div>
+		<div id="mainPanle" region="center"  style="background: #eee; overflow-y:hidden">
+          <div id="tabs"  fit="true"  class="easyui-tabs" border="false" >
+			<div title="欢迎使用"  style="padding:20px;overflow:hidden;" id="home" >
+				<h1>欢迎使用通途租车后台管理系统!</h1>
+			</div>
+		  </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src='../js/outlook2.js'> </script>
+</html>

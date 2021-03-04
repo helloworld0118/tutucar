@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<!-- 
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<include file="struts/struts-core.xml"></include>
+	 -->
+	<package name="defalut" namespace="/" extends="struts-default">
+		<action name="wechatAction" class="wechatAction">
+		</action>
+		<action name="userAction" class="userAction">
+		    <result name="registerSuccess">login.jsp</result>
+		    <result name="success">home.jsp</result>
+		    <result name="error">login.jsp</result>
+		    <result name="loginSuccess">home.jsp</result>
+		    <result name="detail">usercenter.jsp</result>
+		</action>
+		<action name="orderFormAction" class="orderFormAction">
+		    <result name="login">login.jsp</result>
+		    <result name="chioceCar">choicecar.jsp</result>
+		    <result name="initerror">home.jsp</result>
+		    <result name="ticketconfirm">ticketconfirm.jsp</result>
+		    <result name="ticketdetail">ticketdetail.jsp</result>
+		    <result name="evaluation">evaluation.jsp</result>
+		    <result name="userCenter" type="redirect">userAction!detail</result>
+		</action>
+		<action name="serviceAction" class="serviceAction">
+		</action>
+		<action name="userGroupAction" class="userGroupAction">
+		</action>
+		<action name="adminAction" class="adminAction">
+		    <result name="logout">login.html</result>
+		</action>
+		<action name="carAction" class="carInfoAction">
+		    <result name="detail">cardetail.jsp</result>
+		</action>
+		<action name="priceGroupAction" class="priceGroupAction">
+		</action>
+		<action name="priceAction" class="priceInfoAction">
+		</action>
+		<action name="adults" class="adultsAction">
+		</action>
+		<action name="warning" class="warningAction">
+		</action>
+	</package>
+</struts>    
